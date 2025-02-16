@@ -132,7 +132,7 @@ class LinuxDistroBuilder(QtWidgets.QMainWindow):
             self.output_text.setText('Starting ISO creation...')
             subprocess.run(['mkisofs', '-o', f'{distro_name}.iso', '-b', 'boot/grub/stage2_eltorito', '-no-emul-boot', '-boot-load-size', '4', '-boot-info-table', f'./{distro_name}'])
 
-            self.output_text.setText(f'Дистрибутив {distro_name} successfully created! ISO image: {distro_name}.iso')
+            self.output_text.setText(f'Distro {distro_name} successfully created! ISO image: {distro_name}.iso')
         except Exception as e:
             self.output_text.setText(f'Error: {str(e)}')
 
